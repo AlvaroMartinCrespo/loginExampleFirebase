@@ -1,0 +1,21 @@
+<nav class="bg-gray-200 p-10">
+  <div class="flex justify-center">
+    <ul class="list-none flex justify-center gap-5">
+      <li><a class="hover:bg-slate-300 rounded p-2" href="/">Home</a></li>
+      <li *ngIf="!isLogged()">
+        <a class="hover:bg-slate-300 rounded p-2" href="/login">Login</a>
+      </li>
+      <li *ngIf="!isLogged()">
+        <a class="hover:bg-slate-300 rounded p-2" href="/register">Register</a>
+      </li>
+      <li *ngIf="isLogged()">
+        <a class="hover:bg-slate-300 rounded p-2" href="/perfil">Perfil</a>
+      </li>
+      <li *ngIf="isLogged()">
+        <button (click)="logout()" class="hover:bg-slate-300 rounded">
+          Logout
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,56 @@
+<section class="container mx-auto my-10">
+  <div class="flex justify-center py-10">
+    <h2 class="text-6xl font-bold">Register</h2>
+  </div>
+  <div
+    *ngIf="isVisible"
+    class="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded"
+  >
+    Registro exitoso
+  </div>
+  <form
+    class="flex justify-center flex-col items-center"
+    (ngSubmit)="onSubmit()"
+    [formGroup]="formReg"
+  >
+    <div class="md:flex md:items-center mb-6">
+      <label
+        for="email"
+        class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+        >Email</label
+      >
+      <input
+        type="email"
+        name="email"
+        id="email"
+        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+        formControlName="email"
+        placeholder="ejemplo@ejemplo"
+        ngModel
+      />
+    </div>
+    <div class="md:flex md:items-center mb-6">
+      <label
+        for="password"
+        class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+        >Password</label
+      >
+      <input
+        type="password"
+        name="password"
+        id="password"
+        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+        formControlName="password"
+        placeholder="Password"
+        ngModel
+      />
+    </div>
+    <div class="flex justify-center">
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Register
+      </button>
+    </div>
+  </form>
+</section>
